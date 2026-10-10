@@ -229,8 +229,8 @@ function Welcome({ onStart, onSignIn }: { onStart: () => void; onSignIn: () => v
     { icon: "cards", t: "Review at the right time", d: "Cards return just before you would forget", cls: "t3" },
   ];
   return (
-    <div className="p-stack" style={{ gap: 16 }}>
-      <div className="p-hero ink" style={{ padding: "18px 16px 20px" }}>
+    <div className="p-stack" style={{ gap: 12 }}>
+      <div className="p-hero ink" style={{ padding: "14px 16px 16px" }}>
         <span className="circle circle-big" aria-hidden="true" />
         <span className="circle circle-hot" aria-hidden="true" style={{ top: 70, right: 44, bottom: "auto" }} />
         <div className="p-brand" style={{ color: "#fff" }}>
@@ -238,9 +238,9 @@ function Welcome({ onStart, onSignIn }: { onStart: () => void; onSignIn: () => v
           Stoga.study
         </div>
         <span className="sticker" style={{ fontSize: 13, padding: "6px 12px", marginTop: 14 }}>Free for every CHS student</span>
-        <div className="p-title" style={{ fontSize: 30, marginTop: 12 }}>Study smarter from your own notes.</div>
+        <div className="p-title" style={{ fontSize: 26, marginTop: 10 }}>Your dream school starts with better notes.</div>
         <p style={{ color: "#C7A9AF", fontSize: 14, marginTop: 8 }}>
-          Upload a PDF or class notes. Get hints first, then cards, quizzes and a plan, all linked back to your pages.
+          Upload messy notes. Get a study guide, cards and a tutor that hints before it tells.
         </p>
       </div>
       {rows.map((r) => (

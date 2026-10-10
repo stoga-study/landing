@@ -52,9 +52,9 @@ function Hero() {
           <span className="circle circle-accent" aria-hidden="true" />
           <div className="hero-copy">
             <span className="sticker">Free for every CHS student</span>
-            <h1 id="hero-title">Turn messy notes into a study guide that makes sense.</h1>
+            <h1 id="hero-title">Harvard, Stanford, MIT? It starts with better notes.</h1>
             <p className="hero-lede">
-              Upload a PDF or your class notes and we will organize them into a guide, flashcards and quizzes. Stuck? The tutor nudges you with hints instead of handing over answers.
+              Good grades come from studying that sticks. Drop in your messy notes and get a clean study guide, flashcards and a tutor that gives hints, not answers. We can&apos;t promise the acceptance letter, but your future self will say thanks.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-inverse" href="#how-it-works">
@@ -63,7 +63,7 @@ function Hero() {
               <a className="btn btn-ghost" href="/plans">See plans</a>
             </div>
             <ul className="hero-meta">
-              <li><Icon name="check" /> No credit card needed (we know you&apos;re broke 😭)</li>
+              <li><Icon name="check" /> No credit card needed (you wouldn&apos;t want to spend money on studying, would you?)</li>
               <li><Icon name="check" /> Still being built, so what you can try today is a demo</li>
             </ul>
           </div>

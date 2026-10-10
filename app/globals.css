@@ -259,7 +259,7 @@ h1, h2, h3 { text-wrap: balance; }
 .phone-tabs button { display: flex; flex-direction: column; align-items: center; gap: 2px; min-height: 44px; font-size: 13px; color: var(--muted); border-radius: 12px; justify-content: center; }
 .phone-tabs button svg { width: 20px; height: 20px; }
 .phone-tabs button[aria-current="page"] { color: var(--brand); font-weight: 700; }
-@media (min-width: 400px) { .phone { width: 340px; } .phone-screen { height: 680px; } }
+@media (min-width: 400px) { .phone { width: 360px; } .phone-screen { height: clamp(700px, 88vh, 780px); } }
 
 /* In-phone building blocks (scaled-down app UI) */
 .p-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
