@@ -621,3 +621,16 @@ h1, h2, h3 { text-wrap: balance; }
 .faq-group { margin-top: 48px; scroll-margin-top: 96px; }
 .faq-group h2 { font-size: clamp(26px, 4vw, 34px); margin-bottom: 18px; }
 .faq-group .faq { margin: 0; max-width: 840px; }
+
+/* Hero: fills the first screen, rotating school headline */
+.hero-panel { min-height: calc(100svh - 96px); align-content: center; }
+.school { display: inline-block; vertical-align: bottom; }
+.school-pop { display: inline-flex; align-items: center; gap: 0.18em; animation: school-in 420ms cubic-bezier(.2,.8,.2,1); }
+.school-badge {
+  display: inline-grid; place-items: center; width: 0.95em; height: 0.95em; border-radius: 0.24em;
+  color: #fff; font-size: 0.8em; font-weight: 800; line-height: 1; box-shadow: 0 0 0 2px rgba(255,255,255,0.18) inset;
+}
+.school-name { color: #F2A8BA; }
+@keyframes school-in { from { opacity: 0; transform: translateY(0.35em); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .school-pop { animation: none; } }
+@media (min-width: 900px) { .hero h1 { font-size: clamp(52px, 6.2vw, 84px); } }

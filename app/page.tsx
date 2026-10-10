@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Demo } from "@/components/demo/Demo";
 import { DemoLabel } from "@/components/DemoLabel";
 import { Footer } from "@/components/Footer";
+import { RotatingSchool } from "@/components/RotatingSchool";
 import { Header } from "@/components/Header";
 import { Icon, type IconName } from "@/components/Icon";
 
@@ -52,9 +53,9 @@ function Hero() {
           <span className="circle circle-accent" aria-hidden="true" />
           <div className="hero-copy">
             <span className="sticker">Free for every CHS student</span>
-            <h1 id="hero-title">Harvard, Stanford, MIT? It starts with better notes.</h1>
+            <h1 id="hero-title">Study like you belong at <RotatingSchool /></h1>
             <p className="hero-lede">
-              Good grades come from studying that sticks. Drop in your messy notes and get a clean study guide, flashcards and a tutor that gives hints, not answers. We can&apos;t promise the acceptance letter, but your future self will say thanks.
+              Drop in your messy notes and get a clean study guide, flashcards and a tutor that gives hints, not answers. We can&apos;t promise the acceptance letter, but your future self will say thanks.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-inverse" href="#how-it-works">
