@@ -55,7 +55,7 @@ function Hero() {
             <span className="sticker">Free for every CHS student</span>
             <h1 id="hero-title">Study like you belong at <RotatingSchool /></h1>
             <p className="hero-lede">
-              Turn raw notes into structured study guides, flashcards, or a hint-first personal tutor. Because <span className="scribble">no two students learn the exact same way</span>.
+              Turn raw notes into structured study guides, flashcards, or a hint-first personal tutor. <span className="scribble">Because<svg viewBox="0 0 100 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8.5 C14 4.5 24 10.5 38 6.8 S62 4.2 74 7.6 S92 5.2 98 3.4" /><path d="M6 12 C22 9.4 40 12.6 58 10.2 S86 9.6 95 11" /></svg></span> no two students learn the exact same way.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-inverse" href="#how-it-works">
