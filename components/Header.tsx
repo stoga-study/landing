@@ -53,7 +53,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className={`site-header${scrolled || open ? " scrolled" : ""}`}>
+    <header className={`site-header${scrolled || open ? " scrolled" : ""}${open ? " menu-open" : ""}`}>
       <nav className="container nav" aria-label="Main">
         <a className="brand" href="/" aria-label="Stoga.study home">
           <Brand />
