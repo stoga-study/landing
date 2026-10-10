@@ -9,9 +9,9 @@ import { THEME_LABEL, type ThemeChoice, useTheme } from "./theme";
 const LINKS = [
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#features", label: "Features" },
-  { href: "/#plans", label: "Plans" },
-  { href: "/#funding", label: "Funding" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "/plans", label: "Plans" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 const NEXT: Record<ThemeChoice, ThemeChoice> = { system: "light", light: "dark", dark: "system" };

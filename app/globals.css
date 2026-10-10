@@ -600,3 +600,24 @@ h1, h2, h3 { text-wrap: balance; }
   .fund-panel .circle-hot { width: 36px; height: 36px; top: 24px; right: 24px; bottom: auto; }
   .final .circle-hot { width: 40px; height: 40px; top: auto; bottom: 28px; right: 28px; }
 }
+
+/* Simplified homepage + FAQ */
+.chip.status { font-size: 13px; margin-top: 14px; }
+.section-head .chip.status { margin-top: 0; vertical-align: middle; }
+.trust .card .chip.status { display: inline-flex; }
+.privacy-widget { padding: 32px; display: grid; gap: 28px; }
+.privacy-widget h2 { font-size: clamp(28px, 5vw, 40px); margin-top: 12px; }
+.privacy-widget > div > p { margin: 12px 0 20px; color: var(--muted); }
+.privacy-widget ul { display: grid; gap: 18px; list-style: none; padding: 0; margin: 0; }
+.privacy-widget li { display: flex; gap: 14px; align-items: flex-start; }
+@media (min-width: 880px) { .privacy-widget { grid-template-columns: 1fr 1.2fr; align-items: center; padding: 44px; gap: 48px; } }
+.plans-lite { display: grid; gap: 16px; }
+.plans-lite .card { padding: 24px; }
+.plans-lite h3 { font-size: 22px; }
+.plans-lite .price-lite { font-family: var(--font-display); font-weight: 700; color: var(--brand); margin-top: 6px; }
+.plans-lite p { color: var(--muted); font-size: 15px; margin-top: 10px; }
+@media (min-width: 720px) { .plans-lite { grid-template-columns: repeat(3, 1fr); } }
+.faq-jump { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+.faq-group { margin-top: 48px; scroll-margin-top: 96px; }
+.faq-group h2 { font-size: clamp(26px, 4vw, 34px); margin-bottom: 18px; }
+.faq-group .faq { margin: 0; max-width: 840px; }

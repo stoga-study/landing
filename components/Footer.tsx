@@ -4,9 +4,9 @@ import { Brand } from "./Header";
 import { THEME_LABEL, type ThemeChoice, useTheme } from "./theme";
 
 const COLS = [
-  { h: "Product", links: [["How it works", "/#how-it-works"], ["Features", "/#features"], ["The tutor", "/#tutor"], ["Plans", "/#plans"]] },
-  { h: "Community", links: [["Funding", "/#funding"], ["Your own key", "/#byok"], ["Fair use", "/#fair-use"], ["FAQ", "/#faq"]] },
-  { h: "Trust", links: [["Privacy", "/privacy"], ["Academic integrity", "/#trust"], ["Accessibility", "/#trust"]] },
+  { h: "Product", links: [["How it works", "/#how-it-works"], ["Features", "/#features"], ["The tutor", "/#tutor"], ["Plans", "/plans"]] },
+  { h: "Community", links: [["Funding", "/plans#funding"], ["Your own API key", "/plans#byok"], ["Fair use", "/plans#fair-use"], ["FAQ", "/faq"]] },
+  { h: "Trust", links: [["Privacy", "/privacy"], ["Academic integrity", "/faq#integrity"], ["Offline access", "/faq#offline"]] },
 ];
 
 export function Footer() {

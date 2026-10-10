@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Privacy",
-  description: "How Stoga.study plans to handle student notes, uploads and data, in plain language.",
+  description: "How Stoga.study plans to handle student notes, uploads and data, in a few short sections.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
           <div className="note-dashed" style={{ marginTop: 20 }}>
             <span className="label-backend">Draft</span>
             <p style={{ marginTop: 8 }}>
-              This is a plain-language summary of how Stoga.study is being designed. It is not yet a legal policy and needs legal
+              This is a short summary of how Stoga.study is being designed. It is not yet a legal policy and needs legal
               review, including for FERPA, Pennsylvania privacy rules and parental consent, before the app launches.
             </p>
           </div>

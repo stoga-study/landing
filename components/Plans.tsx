@@ -27,7 +27,7 @@ const PLANS: Plan[] = [
       ["Cards, notes, saved quizzes", "No limit"],
     ],
     points: ["Every feature: tutor, cards, quizzes, guides, planner", "Same answer quality as every plan", "Limits reset at midnight and on the 1st"],
-    cta: { label: "Start in the demo", href: "#how-it-works" },
+    cta: { label: "Try it out", href: "/#how-it-works" },
   },
   {
     name: "Independent",
@@ -46,11 +46,11 @@ const PLANS: Plan[] = [
     name: "Unlimited",
     price: "$10",
     per: "a month",
-    desc: "Heavy use with plain-language fair use. Cancel any time and keep your content.",
+    desc: "For heavy use, with simple fair-use rules. Cancel any time and keep your content.",
     allow: [
       ["Tutor messages", "No daily cap"],
       ["Uploads", "No monthly cap"],
-      ["Fair use", "Explained below"],
+      ["Fair use", "See below"],
     ],
     points: ["Helps keep Essential free for everyone", "A parent or guardian pays and approves", "We email before limiting anything"],
     cta: { label: "Read fair use", href: "#fair-use" },
@@ -104,7 +104,7 @@ export function Plans() {
               </span>
             )}
             <a className={`btn ${p.ink ? "btn-inverse" : p.name === "Essential" ? "btn-primary" : "btn-secondary"}`} href={p.cta.href}>
-              {p.cta.href === "#how-it-works" ? <DemoLabel wide={p.cta.label} /> : p.cta.label}
+              {p.cta.href === "/#how-it-works" ? <DemoLabel wide={p.cta.label} /> : p.cta.label}
             </a>
           </article>
         ))}
@@ -113,11 +113,16 @@ export function Plans() {
         Allowances are planned launch figures and may be adjusted once real costs are known. Changes are announced before they apply.
       </p>
 
-      <div className="plan-extra">
-        <ByokCard />
-        <FairUseCard />
-      </div>
     </>
+  );
+}
+
+export function PlanExtras() {
+  return (
+    <div className="plan-extra">
+      <ByokCard />
+      <FairUseCard />
+    </div>
   );
 }
 
@@ -203,7 +208,7 @@ function FairUseCard() {
     <section className="card" id="fair-use" aria-labelledby="fair-title" style={{ padding: 24 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
         <span className="tile"><Icon name="shield" /></span>
-        <h3 id="fair-title">Fair use on Unlimited, in plain words</h3>
+        <h3 id="fair-title">Fair use on Unlimited</h3>
       </div>
       <ul className="fairuse">
         <li><Icon name="check" /><span><b>Typical heavy use is fine.</b> Studying every day, long tutor sessions before exams, uploading every handout: that is what Unlimited is for.</span></li>
