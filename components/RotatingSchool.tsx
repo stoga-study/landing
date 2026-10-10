@@ -2,31 +2,35 @@
 
 import { useEffect, useState } from "react";
 
-// Monogram badges in each school's main colour. Official logos are trademarks, so we do not use them.
-const SCHOOLS: [string, string, string][] = [
-  ["Princeton", "P", "#E87722"], ["MIT", "M", "#A31F34"], ["Harvard", "H", "#A51C30"], ["Stanford", "S", "#8C1515"],
-  ["Yale", "Y", "#00356B"], ["Caltech", "C", "#FF6C0C"], ["UPenn", "P", "#011F5B"], ["Duke", "D", "#012169"],
-  ["Brown", "B", "#4E3629"], ["Dartmouth", "D", "#00693E"], ["Columbia", "C", "#4B9CD3"], ["Cornell", "C", "#B31B1B"],
-  ["Johns Hopkins", "J", "#002D72"], ["Northwestern", "N", "#4E2A84"], ["UChicago", "U", "#800000"], ["UC Berkeley", "B", "#003262"],
-  ["UCLA", "U", "#2774AE"], ["Vanderbilt", "V", "#866D4B"], ["Rice", "R", "#00205B"], ["Notre Dame", "N", "#0C2340"],
+// Logos live in /public/logos. Some are wordmarks, so the tile sizes itself to the image.
+const SCHOOLS: [string, string][] = [
+  ["Princeton", "princeton.svg"], ["MIT", "mit.svg"], ["Harvard", "harvard.svg"], ["Stanford", "stanford.svg"],
+  ["Yale", "yale.svg"], ["Caltech", "caltech.svg"], ["UPenn", "upenn.svg"], ["Duke", "duke.svg"],
+  ["Brown", "brown.svg"], ["Dartmouth", "dartmouth.svg"], ["Columbia", "columbia.svg"], ["Cornell", "cornell.jpg"],
+  ["Johns Hopkins", "johns-hopkins.png"], ["Northwestern", "northwestern.png"], ["UChicago", "uchicago.svg"], ["UC Berkeley", "berkeley.svg"],
+  ["UCLA", "ucla.svg"], ["Vanderbilt", "vanderbilt.svg"], ["Rice", "rice.png"], ["Notre Dame", "notre-dame.svg"],
 ];
 
 export function RotatingSchool() {
   const [i, setI] = useState(0);
 
   useEffect(() => {
+    SCHOOLS.forEach(([, f]) => { new Image().src = `/logos/${f}`; });
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const t = setInterval(() => setI((n) => (n + 1) % SCHOOLS.length), 2400);
     return () => clearInterval(t);
   }, []);
 
-  const [name, letter, color] = SCHOOLS[i];
+  const [name, file] = SCHOOLS[i];
   return (
     <>
       <span className="sr-only">a top university</span>
       <span className="school" aria-hidden="true">
         <span key={name} className="school-pop">
-          <span className="school-badge" style={{ background: color }}>{letter}</span>
+          <span className="school-badge">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={`/logos/${file}`} alt="" />
+          </span>
           <span className="school-name">{name}</span>
         </span>
       </span>

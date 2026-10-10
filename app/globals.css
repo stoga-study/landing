@@ -627,9 +627,10 @@ h1, h2, h3 { text-wrap: balance; }
 .school { display: inline-block; vertical-align: bottom; }
 .school-pop { display: inline-flex; align-items: center; gap: 0.18em; animation: school-in 420ms cubic-bezier(.2,.8,.2,1); }
 .school-badge {
-  display: inline-grid; place-items: center; width: 0.95em; height: 0.95em; border-radius: 0.24em;
-  color: #fff; font-size: 0.8em; font-weight: 800; line-height: 1; box-shadow: 0 0 0 2px rgba(255,255,255,0.18) inset;
+  display: inline-flex; align-items: center; justify-content: center; height: 0.95em; min-width: 0.95em; max-width: 2.6em;
+  padding: 0.1em; border-radius: 0.24em; background: #fff;
 }
+.school-badge img { height: 100%; width: auto; max-width: 100%; object-fit: contain; display: block; }
 .school-name { color: #F2A8BA; }
 @keyframes school-in { from { opacity: 0; transform: translateY(0.35em); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .school-pop { animation: none; } }
