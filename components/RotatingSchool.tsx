@@ -16,7 +16,7 @@ export function RotatingSchool() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const t = setInterval(() => setI((n) => (n + 1) % SCHOOLS.length), 1600);
+    const t = setInterval(() => setI((n) => (n + 1) % SCHOOLS.length), 2000);
     return () => clearInterval(t);
   }, []);
 
@@ -24,8 +24,11 @@ export function RotatingSchool() {
   return (
     <>
       <span className="sr-only">a top university</span>
+      {/* All names share one grid cell, so the slot is always as wide as the longest one and the layout never shifts. */}
       <span className="school" aria-hidden="true">
-        <span key={name} className="school-pop" style={{ color }}>{name}</span>
+        {SCHOOLS.map(([n, c], idx) => (
+          <span key={n} className={idx === i ? "school-pop" : "school-hide"} style={{ color: c }}>{n}</span>
+        ))}
       </span>
     </>
   );

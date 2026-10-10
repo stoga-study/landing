@@ -624,8 +624,10 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* Hero: fills the first screen, rotating school headline */
 .hero-panel { min-height: calc(100svh - 96px); align-content: center; }
-.school { display: inline-block; vertical-align: bottom; }
-.school-pop { display: inline-flex; align-items: center; gap: 0.18em; animation: school-in 320ms cubic-bezier(.2,.8,.2,1); }
+.school { display: grid; justify-items: start; white-space: nowrap; }
+.school > * { grid-area: 1 / 1; }
+.school-hide { visibility: hidden; }
+.school-pop { animation: school-in 320ms cubic-bezier(.2,.8,.2,1); }
 @keyframes school-in { from { opacity: 0; transform: translateY(0.35em); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .school-pop { animation: none; } }
 @media (min-width: 900px) { .hero h1 { font-size: clamp(52px, 6.2vw, 84px); } }
