@@ -18,8 +18,7 @@ const atkinson = Atkinson_Hyperlegible({
 });
 
 const SITE_URL = "https://stoga.study";
-const DESCRIPTION =
-  "A free AI study app for Conestoga High School students. Flashcards, an AI tutor, study guides: pick what works and actually learn it. Still in development, with an interactive demo to try.";
+const DESCRIPTION = "A free AI study app for Conestoga High School students.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
