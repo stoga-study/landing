@@ -631,3 +631,9 @@ h1, h2, h3 { text-wrap: balance; }
 @keyframes school-in { from { opacity: 0; transform: translateY(0.35em); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .school-pop { animation: none; } }
 @media (min-width: 900px) { .hero h1 { font-size: clamp(52px, 6.2vw, 84px); } }
+
+/* Hand-scribbled underline (decorative; repeats so it works across wrapped lines) */
+.scribble {
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2210%22%20viewBox%3D%220%200%2064%2010%22%3E%3Cpath%20d%3D%22M1%206%20C8%201%2C%2014%209%2C%2022%205%20S36%202%2C%2042%206%20S56%208%2C%2063%203%22%20fill%3D%22none%22%20stroke%3D%22%23F2A8BA%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E") repeat-x left bottom / 64px 10px;
+  padding-bottom: 8px; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}

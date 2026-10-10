@@ -55,7 +55,7 @@ function Hero() {
             <span className="sticker">Free for every CHS student</span>
             <h1 id="hero-title">Study like you belong at <RotatingSchool /></h1>
             <p className="hero-lede">
-              Turn raw notes into structured study guides, flashcards, or a hint-first personal tutor. You bring the material, you choose the method.
+              Turn raw notes into structured study guides, flashcards, or a hint-first personal tutor. Because <span className="scribble">no two students learn the exact same way</span>.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-inverse" href="#how-it-works">
