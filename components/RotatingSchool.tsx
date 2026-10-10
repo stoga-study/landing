@@ -16,7 +16,7 @@ export function RotatingSchool() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const t = setInterval(() => setI((n) => (n + 1) % SCHOOLS.length), 2400);
+    const t = setInterval(() => setI((n) => (n + 1) % SCHOOLS.length), 1600);
     return () => clearInterval(t);
   }, []);
 
