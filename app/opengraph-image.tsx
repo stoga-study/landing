@@ -39,9 +39,6 @@ export default async function OpengraphImage() {
               <div style={{ display: "flex" }}>Study like you belong at</div>
               <div style={{ display: "flex", color: BRAND_ON_DARK }}>your dream school.</div>
             </div>
-            <div style={{ display: "flex", color: INK_MUTED, fontSize: 26, marginTop: 22, lineHeight: 1.35, maxWidth: 980 }}>
-              Turn raw notes into structured study guides, flashcards, or a hint-first personal tutor. Built to help you study smarter, not longer.
-            </div>
           </div>
         </div>
       </div>

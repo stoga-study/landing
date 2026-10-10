@@ -14,7 +14,7 @@ const jsonLd = {
   applicationCategory: "EducationalApplication",
   operatingSystem: "Web",
   description:
-    "A free AI study app in development for Conestoga High School students: turn messy notes into organized study guides, with hint-first tutoring, flashcards and quizzes. Currently a demo.",
+    "A free AI study app in development for Conestoga High School students: turn messy notes into organized study guides, with personal AI tutoring, flashcards and quizzes.",
   offers: [
     { "@type": "Offer", name: "Essential", price: "0", priceCurrency: "USD" },
     { "@type": "Offer", name: "Independent", price: "0", priceCurrency: "USD" },
@@ -55,7 +55,7 @@ function Hero() {
             <span className="sticker">Free for every CHS student</span>
             <h1 id="hero-title">Study like you belong at <RotatingSchool /></h1>
             <p className="hero-lede">
-              Turn raw notes into structured study guides, flashcards, or a hint-first personal tutor. Built to help you study smarter, not longer.
+              Turn raw notes into structured study guides, flashcards, or a personal AI tutor. Built to help you study smarter, not longer.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-inverse" href="#how-it-works">
@@ -139,7 +139,7 @@ const WORKFLOW: [IconName, string, string, string][] = [
   ["users", "", "Get set up", "Pick your classes in under a minute. No card, no trial clock."],
   ["upload", "t2", "Add your notes", "A PDF, Word file, slides, a photo of handwritten notes or pasted text, up to 25 MB."],
   ["list", "t3", "Get a study set", "Notes, flashcards, a practice quiz and a study guide, all linked to your page numbers."],
-  ["chat", "t4", "Ask the tutor", "Hints first, then a closer hint, and the full explanation only when you ask."],
+  ["chat", "t4", "Ask the tutor", "Get a small hint first. Ask for the full answer only when you want it."],
   ["cards", "", "Review flashcards", "Edit any card, rate how it felt, and it comes back just before you would forget."],
   ["check", "t2", "Practice quiz", "Feedback after every answer, with the source page. Misses go to your mistake review."],
   ["chart", "t3", "Plan and track", "Days to your exam, an honest readiness estimate, weak spots and a plan for the week."],
@@ -192,7 +192,7 @@ function HowItWorks() {
 
 const FEATURES: [IconName, string, string, string, "demo" | "planned"][] = [
   ["text", "", "Messy notes in, study guide out", "Drop in a PDF, slides or a photo of your notes. We sort them into short sections with links back to your pages.", "demo"],
-  ["chat", "t2", "A tutor that teaches", "It nudges you with hints, formulas and page citations instead of finishing the assignment for you.", "demo"],
+  ["chat", "t2", "A tutor that teaches", "It gives hints and points to the page in your notes, instead of just doing the work for you.", "demo"],
   ["cards", "t3", "Flashcards and quizzes", "Cards come from your own notes, and you can edit any of them. Quizzes tell you what you missed and where to look.", "demo"],
   ["calendar", "t4", "A study plan", "Add an exam date and get a day-by-day plan you can move around.", "demo"],
   ["wifiOff", "", "Offline access", "The plan is for saved cards and notes to work offline. The AI tutor will still need a connection.", "planned"],
@@ -236,19 +236,19 @@ function TutorSection() {
       <div className="container">
         <div className="section-head">
           <span className="eyebrow">The tutor</span>
-          <h2 id="tutor-title">Hints first. You choose how far to go.</h2>
-          <p>The tutor gives you the smallest nudge that gets you moving, and it shows its work with page citations.</p>
+          <h2 id="tutor-title">Hints first, answers when you want them.</h2>
+          <p>The tutor starts with a small hint, shows which page it came from, and only goes further when you ask.</p>
         </div>
         <div className="ladder">
           <div className="rung">
             <div className="num">1</div>
             <h3>Hint</h3>
-            <p>Points to the idea without giving it away, with one guiding question.</p>
+            <p>Points you in the right direction without giving the answer away.</p>
           </div>
           <div className="rung">
             <div className="num">2</div>
             <h3>Closer hint</h3>
-            <p>Names the formula or the page and lets you take the step yourself.</p>
+            <p>Names the formula or the page. You take the next step.</p>
           </div>
           <div className="rung ink-panel">
             <div className="num">3</div>

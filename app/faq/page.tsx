@@ -21,7 +21,7 @@ const GROUPS: Group[] = [
         "Right now the site is still being built. The demo on the homepage shows the real flow with sample content. Reading your actual files and live tutor answers are still in development.",
       ]],
       ["How does the AI tutor help me study?", [
-        "The tutor works like a hint ladder. First you get a small nudge and a guiding question. If that is not enough, you get a closer hint, like the formula to use or the page to reread. The full explanation, with a worked example, only shows up when you ask for it.",
+        "The tutor gives you a small hint first. If you need more, it names the formula or the page to look at. You only get the full explanation, with a worked example, when you ask for it.",
         "It answers from your own notes and cites the page. If your notes do not cover something, it tells you before using general knowledge, and it says so when it is not sure.",
       ]],
       ["How do I turn messy notes into an organized study guide?", [
@@ -37,7 +37,7 @@ const GROUPS: Group[] = [
         "No. The tutor will not write graded work. It can help you outline an essay, give a hint on a problem, or give feedback on a draft you wrote.",
       ]],
       ["How does the tutor help me learn instead of giving me answers?", [
-        "It uses hints, formulas, nudges and page citations to get you to the answer yourself. You stay in control of how far it goes, but the default is always the smallest push first.",
+        "It gives you hints, formulas and page references so you can work out the answer yourself. You decide how much help you want, but it always starts small.",
       ]],
       ["Does it follow Conestoga High School's academic integrity expectations?", [
         "It is designed to support them. The tutor is built to help you learn and not to complete assignments. That said, Stoga.study is made by students and is not an official Conestoga High School or Tredyffrin/Easttown School District service, and your teachers' rules always come first.",

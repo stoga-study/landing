@@ -41,7 +41,7 @@ const ASIDE: Record<string, { title: string; body: string; backend: string }> = 
   },
   tutor: {
     title: "Hints before answers",
-    body: "The tutor nudges first, then names the formula or page, and only explains in full when you ask. Every answer links to the page it came from.",
+    body: "The tutor starts with a hint, then names the formula or page, and only explains everything when you ask. Every answer links to the page it came from.",
     backend: "Sample chat. Live answers need backend integration.",
   },
   cards: {
@@ -240,7 +240,7 @@ function Welcome({ onStart, onSignIn }: { onStart: () => void; onSignIn: () => v
         <span className="sticker" style={{ fontSize: 13, padding: "6px 12px", marginTop: 14 }}>Free for every CHS student</span>
         <div className="p-title" style={{ fontSize: 26, marginTop: 10 }}>Your dream school starts with better notes.</div>
         <p style={{ color: "#C7A9AF", fontSize: 14, marginTop: 8 }}>
-          Upload messy notes. Get a study guide, cards and a tutor that hints before it tells.
+          Upload your notes. Get a study guide, flashcards and a personal AI tutor.
         </p>
       </div>
       {rows.map((r) => (
