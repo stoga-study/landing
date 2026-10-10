@@ -55,7 +55,7 @@ function Hero() {
             <span className="sticker">Free for every CHS student</span>
             <h1 id="hero-title">Study like you belong at <RotatingSchool /></h1>
             <p className="hero-lede">
-              Turn raw notes into structured study guides, flashcards, or a hint-first personal tutor. <span className="scribble">Because<svg viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="rough" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.9 0.12" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.02 0.9" numOctaves="2" seed="9" result="s"/><feColorMatrix in="s" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2 1.9" result="m"/><feComposite in="d" in2="m" operator="in"/></filter></defs><g filter="url(#rough)"><path pathLength="1" d="M2 6 C28 2.6 62 3.4 96 2.6"/><path pathLength="1" d="M98 10 C68 8 34 9 5 12.4"/><path pathLength="1" d="M4 16 C34 13.4 66 14.6 94 15.4"/><path pathLength="1" d="M93 21 C68 19.4 40 20.2 10 21.6"/></g></svg></span> no two students learn the exact same way.
+              Turn raw notes into structured study guides, flashcards, or a hint-first personal tutor. Built to help you study smarter, not longer.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-inverse" href="#how-it-works">
