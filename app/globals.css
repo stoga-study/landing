@@ -626,12 +626,6 @@ h1, h2, h3 { text-wrap: balance; }
 .hero-panel { min-height: calc(100svh - 96px); align-content: center; }
 .school { display: inline-block; vertical-align: bottom; }
 .school-pop { display: inline-flex; align-items: center; gap: 0.18em; animation: school-in 420ms cubic-bezier(.2,.8,.2,1); }
-.school-badge {
-  display: inline-flex; align-items: center; justify-content: center; height: 0.95em; min-width: 0.95em; max-width: 2.6em;
-  padding: 0.1em; border-radius: 0.24em; background: #fff;
-}
-.school-badge img { height: 100%; width: auto; max-width: 100%; object-fit: contain; display: block; }
-.school-name { color: #F2A8BA; }
 @keyframes school-in { from { opacity: 0; transform: translateY(0.35em); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .school-pop { animation: none; } }
 @media (min-width: 900px) { .hero h1 { font-size: clamp(52px, 6.2vw, 84px); } }

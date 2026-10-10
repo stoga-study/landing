@@ -55,7 +55,7 @@ function Hero() {
             <span className="sticker">Free for every CHS student</span>
             <h1 id="hero-title">Study like you belong at <RotatingSchool /></h1>
             <p className="hero-lede">
-              Flashcards, an AI tutor, study guides, whatever works for you. Stoga.study helps you actually learn the material, your way. We can&apos;t promise the acceptance letter, but your future self will say thanks.
+              Flashcards, an AI tutor, study guides. Pick what works and actually learn it. No acceptance-letter guarantees, but future you will be thankful.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-inverse" href="#how-it-works">
