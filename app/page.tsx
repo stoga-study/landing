@@ -55,7 +55,7 @@ function Hero() {
             <span className="sticker">Free for every CHS student</span>
             <h1 id="hero-title">Study like you belong at <RotatingSchool /></h1>
             <p className="hero-lede">
-              Flashcards, an AI tutor, study guides. Pick what works and actually learn it. No acceptance-letter guarantees, but future you will be thankful.
+              Add your own notes and learn them your way: a study guide, flashcards, or a tutor that gives hints before answers. More ways to study are on the way.
             </p>
             <div className="hero-ctas">
               <a className="btn btn-inverse" href="#how-it-works">
