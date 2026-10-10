@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Stoga.study",
     short_name: "Stoga",
-    description: "Free, calm AI study help for Conestoga High School students.",
+    description: "Free AI study help for Conestoga High School students.",
     start_url: "/",
     display: "standalone",
     background_color: "#F4F4F5",

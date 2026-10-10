@@ -19,7 +19,7 @@ const atkinson = Atkinson_Hyperlegible({
 
 const SITE_URL = "https://stoga.study";
 const DESCRIPTION =
-  "A free, calm AI study app for Conestoga High School students. Upload your notes and PDFs, then get hint-first tutoring, editable flashcards, practice quizzes and a study plan, all linked back to your own pages.";
+  "A free AI study app for Conestoga High School students. Flashcards, an AI tutor, study guides: pick what works and actually learn it. Still in development, with an interactive demo to try.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "Stoga.study",
-    title: "Stoga.study — Study smarter from your own notes",
+    title: "Stoga.study: Study like you belong at your dream school",
     description: DESCRIPTION,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Stoga.study — Study smarter from your own notes",
+    title: "Stoga.study: Study like you belong at your dream school",
     description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
