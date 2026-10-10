@@ -13,20 +13,31 @@ const SCHOOLS: [string, string][] = [
 
 export function RotatingSchool() {
   const [i, setI] = useState(0);
+  const [order, setOrder] = useState(SCHOOLS);
+
+  // Shuffle after mount (Fisher-Yates) so the server and first client render match, but every visit gets a new order.
+  useEffect(() => {
+    const a = [...SCHOOLS];
+    for (let k = a.length - 1; k > 0; k--) {
+      const j = Math.floor(Math.random() * (k + 1));
+      [a[k], a[j]] = [a[j], a[k]];
+    }
+    setOrder(a);
+  }, []);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const t = setInterval(() => setI((n) => (n + 1) % SCHOOLS.length), 2000);
+    const t = setInterval(() => setI((n) => (n + 1) % order.length), 2000);
     return () => clearInterval(t);
   }, []);
 
-  const [name, color] = SCHOOLS[i];
+  const [name, color] = order[i];
   return (
     <>
       <span className="sr-only">a top university</span>
       {/* All names share one grid cell, so the slot is always as wide as the longest one and the layout never shifts. */}
       <span className="school" aria-hidden="true">
-        {SCHOOLS.map(([n, c], idx) => (
+        {order.map(([n, c], idx) => (
           <span key={n} className={idx === i ? "school-pop" : "school-hide"} style={{ color: c }}>{n}</span>
         ))}
       </span>
