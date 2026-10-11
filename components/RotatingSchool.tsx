@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const SCHOOLS: [string, string][] = [
   ["Princeton", "#F58025"], ["MIT", "#E03A52"], ["Harvard", "#E0364D"], ["Stanford", "#D43B3B"],
   ["Yale", "#4F8FE0"], ["Caltech", "#FF6C0C"], ["UPenn", "#4C74D9"], ["Duke", "#5A7BE8"],
-  ["Brown", "#B5835F"], ["Dartmouth", "#2FA36B"], ["Columbia", "#6DB5E8"], ["Cornell", "#E8434A"],
+  ["Brown", "#B5835F"], ["Dartmouth", "#2FA36B"], ["Columbia", "#6DB5E8"],
   ["Johns Hopkins", "#68ACE5"], ["Northwestern", "#9A6BD6"], ["UChicago", "#D8505F"], ["UC Berkeley", "#FDB515"],
   ["UCLA", "#4FA3E0"], ["Vanderbilt", "#C9A961"], ["Rice", "#5B8DEF"], ["Notre Dame", "#D4A73A"],
 ];
