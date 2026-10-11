@@ -17,8 +17,8 @@ const GROUPS: Group[] = [
     title: "How it works",
     items: [
       ["How does the site work?", [
-        "You pick your classes, add your notes (a PDF, Word file, slides, a photo of handwritten notes or pasted text, up to 25 MB), and Stoga.study turns them into a study set: a study guide, flashcards and a practice quiz. Everything links back to the pages it came from, so you can always check the source.",
-        "Right now the site is still being built. The demo on the homepage shows the real flow with sample content. Reading your actual files and live tutor answers are still in development.",
+        "You pick your classes, add your notes (a PDF, a Word file or a text file, up to 25 MB), and Stoga.study turns them into a study set: a study guide, flashcards and a practice quiz. Everything links back to the pages it came from, so you can always check the source.",
+        "Open the app at app.stoga.study and sign in with your email. Photos of handwritten notes and exam prep are coming in the next update.",
       ]],
       ["How does the AI tutor help me study?", [
         "The tutor gives you a small hint first. If you need more, it names the formula or the page to look at. You only get the full explanation, with a worked example, when you ask for it.",
@@ -68,7 +68,7 @@ const GROUPS: Group[] = [
         "The plan is that uploads are private by default and used only to help you study. They are not sold and there are no ads. You can delete any upload, or your whole account, at any time. On this preview site, files you pick in the demo never leave your browser.",
       ]],
       ["How are my personal information and data protected?", [
-        "We collect as little as we can. This preview site has no accounts, no forms that send data and no ad trackers. In the app, API keys are planned to be stored encrypted and used only for your own requests. The full policy is still being reviewed (including FERPA and Pennsylvania rules), so treat the privacy page as a draft summary.",
+        "We collect as little as we can. This site has no accounts, no forms that send data and no ad trackers. In the app, your own API key is stored encrypted and used only for your own requests. The full policy is still being reviewed (including FERPA and Pennsylvania rules), so treat the privacy page as a draft summary.",
       ]],
       ["Who can access my information?", [
         "Other students cannot see your notes, cards or mistakes. Parents and guardians can review plans, costs and what is included, since they approve paid plans. We are still finalizing exactly how our own team's access works, and we will spell it out in the privacy policy before launch.",

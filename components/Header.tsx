@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { DemoLabel } from "./DemoLabel";
 import { Icon } from "./Icon";
 import { THEME_LABEL, type ThemeChoice, useTheme } from "./theme";
 
@@ -75,8 +74,8 @@ export function Header() {
           >
             <Icon name={THEME_ICON[choice]} />
           </button>
-          <a className="btn btn-primary btn-sm nav-cta" href="/#how-it-works">
-            <DemoLabel />
+          <a className="btn btn-primary btn-sm nav-cta" href="https://app.stoga.study">
+            Open the app
           </a>
           <button
             type="button"
@@ -98,8 +97,8 @@ export function Header() {
               <Icon name="arrowRight" className="icon" />
             </a>
           ))}
-          <a className="btn btn-primary btn-block" href="/#how-it-works" onClick={() => setOpen(false)}>
-            <DemoLabel />
+          <a className="btn btn-primary btn-block" href="https://app.stoga.study" onClick={() => setOpen(false)}>
+            Open the app
           </a>
         </div>
       )}

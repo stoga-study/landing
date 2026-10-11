@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Demo } from "@/components/demo/Demo";
-import { DemoLabel } from "@/components/DemoLabel";
 import { Footer } from "@/components/Footer";
 import { RotatingSchool } from "@/components/RotatingSchool";
 import { Header } from "@/components/Header";
@@ -58,14 +57,14 @@ function Hero() {
               Turn raw notes into structured study guides, flashcards, or a personal AI tutor. Built to help you study smarter, not longer.
             </p>
             <div className="hero-ctas">
-              <a className="btn btn-inverse" href="#how-it-works">
-                <DemoLabel /> <Icon name="arrowRight" />
+              <a className="btn btn-inverse" href="https://app.stoga.study">
+                Start studying free <Icon name="arrowRight" />
               </a>
               <a className="btn btn-ghost" href="/plans">See plans</a>
             </div>
             <ul className="hero-meta">
               <li><Icon name="check" /> No credit card needed (you wouldn&apos;t want to spend money on studying, would you?)</li>
-              <li><Icon name="check" /> Still being built, so what you can try today is a demo</li>
+              <li><Icon name="check" /> Sign in with just your school or personal email</li>
             </ul>
           </div>
           <div className="hero-visual" aria-hidden="true">
@@ -334,9 +333,9 @@ function FinalCta() {
         <span className="circle circle-hot" aria-hidden="true" />
         <span className="sticker">Free for every CHS student</span>
         <h2 id="final-title">Your notes are already enough. We just help you use them.</h2>
-        <p>The demo takes about two minutes, and there is nothing to sign up for.</p>
+        <p>Setting up takes about a minute. All you need is an email address.</p>
         <div className="hero-ctas">
-          <a className="btn btn-inverse" href="#how-it-works"><DemoLabel /> <Icon name="arrowRight" /></a>
+          <a className="btn btn-inverse" href="https://app.stoga.study">Start studying free <Icon name="arrowRight" /></a>
           <a className="btn btn-ghost" href="/faq">Read the FAQ</a>
         </div>
       </div>

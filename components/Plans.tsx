@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { DemoLabel } from "./DemoLabel";
 import { Icon } from "./Icon";
 
 type Plan = {
@@ -27,7 +26,7 @@ const PLANS: Plan[] = [
       ["Cards, notes, saved quizzes", "No limit"],
     ],
     points: ["Every feature: tutor, cards, quizzes, guides, planner", "Same answer quality as every plan", "Limits reset at midnight and on the 1st"],
-    cta: { label: "Try it out", href: "/#how-it-works" },
+    cta: { label: "Get started", href: "https://app.stoga.study" },
   },
   {
     name: "Independent",
@@ -39,7 +38,7 @@ const PLANS: Plan[] = [
       ["Uploads", "Your provider's limits"],
       ["Paid to Stoga", "$0"],
     ],
-    points: ["Use a key from a supported AI provider", "Set a monthly spending cap with your provider", "Remove the key any time"],
+    points: ["Use your own Groq API key", "Set a monthly spending cap with your provider", "Remove the key any time"],
     cta: { label: "Preview key settings", href: "#byok" },
   },
   {
@@ -60,9 +59,7 @@ const PLANS: Plan[] = [
 ];
 
 const PROVIDERS = {
-  anthropic: { name: "Anthropic (Claude)", prefix: "sk-ant-", placeholder: "sk-ant-…" },
-  openai: { name: "OpenAI", prefix: "sk-", placeholder: "sk-…" },
-  google: { name: "Google (Gemini)", prefix: "AIza", placeholder: "AIza…" },
+  groq: { name: "Groq", prefix: "gsk_", placeholder: "gsk_…" },
 } as const;
 type Provider = keyof typeof PROVIDERS;
 
@@ -104,7 +101,7 @@ export function Plans() {
               </span>
             )}
             <a className={`btn ${p.ink ? "btn-inverse" : p.name === "Essential" ? "btn-primary" : "btn-secondary"}`} href={p.cta.href}>
-              {p.cta.href === "/#how-it-works" ? <DemoLabel wide={p.cta.label} /> : p.cta.label}
+              {p.cta.label}
             </a>
           </article>
         ))}
@@ -127,7 +124,7 @@ export function PlanExtras() {
 }
 
 function ByokCard() {
-  const [provider, setProvider] = useState<Provider>("anthropic");
+  const [provider, setProvider] = useState<Provider>("groq");
   const [key, setKey] = useState("");
   const [show, setShow] = useState(false);
   const [state, setState] = useState<KeyState>({ kind: "idle" });
