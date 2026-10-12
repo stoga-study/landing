@@ -41,14 +41,14 @@ export function HeroVideo() {
           loop
           playsInline
           preload="auto"
-          poster="/hero/stoga-app-poster.jpg"
+          poster="/hero/stoga-app-poster.jpg?v=2"
           aria-hidden="true"
           tabIndex={-1}
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
         >
-          <source src="/hero/stoga-app.webm" type="video/webm" />
-          <source src="/hero/stoga-app.mp4" type="video/mp4" />
+          <source src="/hero/stoga-app.webm?v=2" type="video/webm" />
+          <source src="/hero/stoga-app.mp4?v=2" type="video/mp4" />
         </video>
       </div>
       <button type="button" className="video-toggle" onClick={toggle} aria-label={playing ? "Pause the app tour video" : "Play the app tour video"}>
