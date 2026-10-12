@@ -36,6 +36,8 @@ const paths = {
   info: <><circle cx="12" cy="12" r="8.5" /><path d="M12 11v5.5" /><path d="M12 7.5h.01" /></>,
   plug: <><path d="M9 3.5v5" /><path d="M15 3.5v5" /><path d="M6.5 8.5h11v3a5.5 5.5 0 0 1-11 0z" /><path d="M12 17v3.5" /></>,
   plus: <><path d="M12 5v14" /><path d="M5 12h14" /></>,
+  play: <><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" /></>,
+  pause: <><path d="M8.5 5.5v13" /><path d="M15.5 5.5v13" /></>,
   users: <><circle cx="9" cy="8.5" r="3.5" /><path d="M2.5 19.5a6.5 6.5 0 0 1 13 0" /><path d="M16 5.2a3.5 3.5 0 0 1 0 6.6" /><path d="M18 14a6.5 6.5 0 0 1 3.5 5.5" /></>,
   wifiOff: <><path d="M3 3l18 18" /><path d="M8.5 16.5a5 5 0 0 1 7 0" /><path d="M5 12.5a10 10 0 0 1 4-2.3" /><path d="M14.5 10.2a10 10 0 0 1 4.5 2.3" /><path d="M12 20h.01" /></>,
   access: <><circle cx="12" cy="4.5" r="1.8" /><path d="M5 8.5 12 10l7-1.5" /><path d="M12 10v4.5l-3 6" /><path d="m12 14.5 3 6" /></>,

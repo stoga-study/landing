@@ -36,7 +36,7 @@ export default function PlansPage() {
           <div className="section-head" id="funding" style={{ marginTop: 72 }}>
             <span className="eyebrow">Funding, in the open</span>
             <h2>Kept going by the Stoga community</h2>
-            <p>Unlimited plans and optional donations cover the costs, and we show where the money goes.</p>
+            <p>Unlimited plans and optional donations will cover the costs, and we will show where every dollar goes.</p>
           </div>
           <Funding />
         </div>

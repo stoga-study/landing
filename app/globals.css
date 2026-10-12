@@ -261,6 +261,20 @@ h1, h2, h3 { text-wrap: balance; }
 .phone-tabs button[aria-current="page"] { color: var(--brand); font-weight: 700; }
 @media (min-width: 400px) { .phone { width: 360px; } .phone-screen { height: clamp(700px, 88vh, 780px); } }
 
+/* Hero: the app tour video fills the phone screen at its own shape (720 x 1560), so nothing is cropped. */
+.phone-video .phone-screen { height: auto; aspect-ratio: 720 / 1560; background: #140D0F; }
+.phone-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.video-toggle {
+  /* Phones only show the top 420px of the frame (.hero-visual), so the button sits inside that. */
+  position: absolute; right: 22px; top: 350px; z-index: 6; width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; color: #fff; background: rgba(20, 13, 15, 0.62);
+  border: 1.5px solid rgba(255, 255, 255, 0.28); backdrop-filter: blur(6px); cursor: pointer;
+}
+.video-toggle svg { width: 18px; height: 18px; }
+.video-toggle:hover { background: rgba(20, 13, 15, 0.8); }
+.video-toggle:focus-visible { outline: 3px solid #F2A8BA; outline-offset: 2px; }
+@media (min-width: 900px) { .hero-visual .phone-video .video-toggle { top: auto; bottom: 196px; } }
+
 /* In-phone building blocks (scaled-down app UI) */
 .p-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
 .p-brand { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: -0.02em; }

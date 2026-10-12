@@ -33,13 +33,13 @@ const PLANS: Plan[] = [
     name: "Independent",
     price: "Free",
     per: "plus provider fees",
-    desc: "Bring your own API key. Your provider bills the key holder, so charges may apply. Most providers require an adult account holder, so a parent or guardian usually sets it up.",
+    desc: "Bring your own API key from any OpenAI-compatible provider. That provider bills the key holder, so charges may apply. Most providers require an adult account holder, so a parent or guardian usually sets it up.",
     allow: [
       ["Tutor messages", "Your provider's limits"],
       ["Uploads", "Your provider's limits"],
       ["Paid to Stoga", "$0"],
     ],
-    points: ["Use a key from a supported AI provider", "Set a monthly spending cap with your provider", "Remove the key any time"],
+    points: ["Any OpenAI-compatible API: OpenAI, OpenRouter, Groq, DeepInfra, Together and more", "Set a monthly spending cap with your provider", "Remove the key any time"],
     cta: { label: "Preview key settings", href: "#byok" },
   },
   {
@@ -59,14 +59,17 @@ const PLANS: Plan[] = [
   },
 ];
 
-const PROVIDERS = {
-  anthropic: { name: "Anthropic (Claude)", prefix: "sk-ant-", placeholder: "sk-ant-…" },
-  openai: { name: "OpenAI", prefix: "sk-", placeholder: "sk-…" },
-  google: { name: "Google (Gemini)", prefix: "AIza", placeholder: "AIza…" },
-} as const;
-type Provider = keyof typeof PROVIDERS;
+// Any OpenAI-compatible API works. These presets only fill in the address; "Other" takes any https URL.
+const PRESETS: [string, string][] = [
+  ["OpenAI", "https://api.openai.com/v1"],
+  ["OpenRouter", "https://openrouter.ai/api/v1"],
+  ["Groq", "https://api.groq.com/openai/v1"],
+  ["DeepInfra", "https://api.deepinfra.com/v1/openai"],
+  ["Together", "https://api.together.xyz/v1"],
+  ["Other (OpenAI-compatible)", ""],
+];
 
-type KeyState = { kind: "idle" } | { kind: "empty" } | { kind: "bad"; prefix: string } | { kind: "ok" };
+type KeyState = { kind: "idle" } | { kind: "empty" } | { kind: "bad"; what: "url" | "key" } | { kind: "ok"; host: string };
 
 export function Plans() {
   return (
@@ -127,18 +130,21 @@ export function PlanExtras() {
 }
 
 function ByokCard() {
-  const [provider, setProvider] = useState<Provider>("anthropic");
+  const [preset, setPreset] = useState(PRESETS[0][0]);
+  const [baseUrl, setBaseUrl] = useState(PRESETS[0][1]);
   const [key, setKey] = useState("");
   const [show, setShow] = useState(false);
   const [state, setState] = useState<KeyState>({ kind: "idle" });
-  const p = PROVIDERS[provider];
 
-  // Format check only. This preview never sends or stores the key.
+  // Format check only. This preview never sends or stores anything.
   const check = () => {
     const k = key.trim();
+    let url: URL | null = null;
+    try { url = new URL(baseUrl.trim()); } catch { url = null; }
     if (!k) setState({ kind: "empty" });
-    else if (!k.startsWith(p.prefix) || k.length < 20) setState({ kind: "bad", prefix: p.prefix });
-    else setState({ kind: "ok" });
+    else if (!url || url.protocol !== "https:") setState({ kind: "bad", what: "url" });
+    else if (k.length < 16 || /\s/.test(k)) setState({ kind: "bad", what: "key" });
+    else setState({ kind: "ok", host: url.host });
     setKey("");
   };
 
@@ -151,14 +157,38 @@ function ByokCard() {
           <span className="label-backend" style={{ marginTop: 6 }}><Icon name="plug" /> Settings preview</span>
         </div>
       </div>
+      <p className="muted" style={{ fontSize: 15, marginTop: 14 }}>Any API that speaks the OpenAI format works: pick a provider or paste its address.</p>
       <form onSubmit={(e) => { e.preventDefault(); check(); }} noValidate>
         <div className="field">
           <label htmlFor="byok-provider">Provider</label>
-          <select id="byok-provider" className="select" value={provider} onChange={(e) => { setProvider(e.target.value as Provider); setState({ kind: "idle" }); }}>
-            {Object.entries(PROVIDERS).map(([id, v]) => (
-              <option key={id} value={id}>{v.name}</option>
-            ))}
+          <select
+            id="byok-provider"
+            className="select"
+            value={preset}
+            onChange={(e) => {
+              const found = PRESETS.find(([n]) => n === e.target.value)!;
+              setPreset(found[0]);
+              setBaseUrl(found[1]);
+              setState({ kind: "idle" });
+            }}
+          >
+            {PRESETS.map(([n]) => <option key={n} value={n}>{n}</option>)}
           </select>
+        </div>
+        <div className="field">
+          <label htmlFor="byok-url">API address (base URL)</label>
+          <input
+            id="byok-url"
+            className="input"
+            type="url"
+            inputMode="url"
+            value={baseUrl}
+            onChange={(e) => { setBaseUrl(e.target.value); setPreset(PRESETS[PRESETS.length - 1][0]); setState({ kind: "idle" }); }}
+            placeholder="https://api.example.com/v1"
+            autoComplete="off"
+            spellCheck={false}
+            aria-invalid={state.kind === "bad" && state.what === "url"}
+          />
         </div>
         <div className="field">
           <label htmlFor="byok-key">API key</label>
@@ -169,10 +199,10 @@ function ByokCard() {
               type={show ? "text" : "password"}
               value={key}
               onChange={(e) => setKey(e.target.value)}
-              placeholder={p.placeholder}
+              placeholder="Paste your key"
               autoComplete="off"
               spellCheck={false}
-              aria-invalid={state.kind === "bad" || state.kind === "empty"}
+              aria-invalid={state.kind === "empty" || (state.kind === "bad" && state.what === "key")}
               aria-describedby="byok-hint byok-result"
             />
             <button type="button" className="icon-btn" style={{ width: 52, height: 52 }} onClick={() => setShow((s) => !s)} aria-label={show ? "Hide key" : "Show key"} aria-pressed={show}>
@@ -187,17 +217,20 @@ function ByokCard() {
         {state.kind === "empty" && (
           <div className="callout"><Icon name="info" /><span><b>Paste a key first.</b> You can find it in your provider&apos;s account settings.</span></div>
         )}
-        {state.kind === "bad" && (
-          <div className="callout"><Icon name="alert" /><span><b>That key does not look right.</b> {p.name} keys start with <code>{state.prefix}</code>. Nothing was saved and your study material is untouched.</span></div>
+        {state.kind === "bad" && state.what === "url" && (
+          <div className="callout"><Icon name="alert" /><span><b>That address does not look right.</b> It should be a full https address, like <code>https://api.openai.com/v1</code>. Nothing was saved.</span></div>
+        )}
+        {state.kind === "bad" && state.what === "key" && (
+          <div className="callout"><Icon name="alert" /><span><b>That key does not look right.</b> Copy the whole key from your provider, with no spaces. Nothing was saved and your study material is untouched.</span></div>
         )}
         {state.kind === "ok" && (
-          <div className="callout"><Icon name="check" /><span><b>The format looks right.</b> In the app, we would check it with {p.name} and store it encrypted. This preview did not send or save it.</span></div>
+          <div className="callout"><Icon name="check" /><span><b>The format looks right.</b> In the app, we would check it with {state.host} and store it encrypted. This preview did not send or save it.</span></div>
         )}
       </div>
       <ul className="fairuse">
         <li><Icon name="info" /><span><b>Charges come from your provider, not from us.</b> Typical study use is usually small, but heavy use adds up. Set a monthly cap in your provider dashboard.</span></li>
         <li><Icon name="users" /><span>Most providers require an adult account holder, so a parent or guardian usually creates the key.</span></li>
-        <li><Icon name="lock" /><span>Planned design: the key is encrypted, used only for your requests and never shown again. Needs backend integration.</span></li>
+        <li><Icon name="lock" /><span>The key is encrypted, used only for your own requests and never shown again.</span></li>
       </ul>
     </section>
   );

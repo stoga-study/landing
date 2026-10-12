@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { Demo } from "@/components/demo/Demo";
 import { DemoLabel } from "@/components/DemoLabel";
 import { Footer } from "@/components/Footer";
 import { RotatingSchool } from "@/components/RotatingSchool";
 import { Header } from "@/components/Header";
+import { HeroVideo } from "@/components/HeroVideo";
 import { Icon, type IconName } from "@/components/Icon";
 
 const jsonLd = {
@@ -68,68 +68,12 @@ function Hero() {
               <li><Icon name="check" /> Still being built, so what you can try today is a demo</li>
             </ul>
           </div>
-          <div className="hero-visual" aria-hidden="true">
-            <HeroPhone />
+          <div className="hero-visual">
+            <HeroVideo />
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-// A static, decorative dashboard. The interactive version lives in the demo.
-function HeroPhone() {
-  return (
-    <div className="phone">
-      <div className="phone-screen">
-        <div className="phone-notch" />
-        <div className="phone-status"><span>9:41</span><span /></div>
-        <div className="phone-body" style={{ overflow: "hidden" }}>
-          <div className="p-top">
-            <div className="p-brand">
-              <Image className="seal" src="/seal.png" alt="" width={30} height={30} />
-              Stoga.study
-            </div>
-          </div>
-          <div className="p-date">Friday, October 9</div>
-          <div className="p-title" style={{ marginBottom: 14 }}>Today, Aarav</div>
-          <div className="p-stack">
-            <div className="p-hero burg">
-              <span className="circle circle-big" />
-              <div style={{ fontSize: 14, color: "#F7EAEC" }}>Flashcards due today</div>
-              <div className="p-row" style={{ alignItems: "flex-end", gap: 10 }}>
-                <div className="p-big">38</div>
-                <p style={{ fontSize: 13, color: "#F7EAEC", paddingBottom: 6 }}>About 15 minutes across AP Statistics and Honors Anatomy.</p>
-              </div>
-              <span className="p-btn inv block" style={{ marginTop: 12 }}>Start review</span>
-            </div>
-            <div className="p-card">
-              <div className="p-row">
-                <span className="tile soft" style={{ width: 40, height: 40 }}><Icon name="chat" /></span>
-                <div>
-                  <div className="p-sub" style={{ fontSize: 13 }}>AP Statistics</div>
-                  <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 17 }}>Sampling distributions</div>
-                </div>
-              </div>
-              <div className="segments" style={{ margin: "12px 0" }}>
-                <span className="done" /><span className="done" /><span className="done" /><span /><span />
-              </div>
-              <div className="p-row between">
-                <span className="p-sub" style={{ fontSize: 13 }}>Step 3 of 5</span>
-                <span className="p-btn" style={{ minHeight: 40 }}>Resume</span>
-              </div>
-            </div>
-            <div className="p-card dashed p-row">
-              <span className="tile soft" style={{ width: 40, height: 40 }}><Icon name="upload" /></span>
-              <span>
-                <b style={{ display: "block" }}>Add notes or a PDF</b>
-                <span className="p-sub" style={{ fontSize: 13 }}>We turn it into cards and a quiz</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -298,7 +242,7 @@ function PrivacySection() {
 function PlansSection() {
   const plans = [
     ["Essential", "Free", "Everything you need for a full course load. No credit card."],
-    ["Independent", "Free + provider fees", "Bring your own API key. A parent or guardian usually sets it up."],
+    ["Independent", "Free + provider fees", "Bring your own API key from any OpenAI-compatible provider. A parent or guardian usually sets it up."],
     ["Unlimited", "$10 a month", "No daily caps, and it helps keep Essential free for everyone."],
   ];
   return (

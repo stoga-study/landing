@@ -43,7 +43,7 @@ export function Footer() {
         </div>
         <div className="footer-legal">
           <p>Stoga.study is built by students, for students. It is not an official service of Conestoga High School or the Tredyffrin/Easttown School District.</p>
-          <p>The app is in development. Screens, numbers and funding figures on this site are sample content until the service launches.</p>
+          <p>The app is in a private beta. The interactive demo and screenshots on this site use sample content.</p>
           <p>© 2026 Stoga.study</p>
         </div>
       </div>

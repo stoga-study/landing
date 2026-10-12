@@ -55,7 +55,7 @@ const GROUPS: Group[] = [
         "Nope. The Essential plan is free, not a trial, and never asks for a card.",
       ]],
       ["What are the limits of each plan?", [
-        "Essential (free): 50 tutor messages a day and 10 uploads a month, with no limit on reviewing the cards, notes and quizzes you already have. Independent (free, plus provider fees): you bring your own API key, so your AI provider sets the limits and bills the key holder. Unlimited ($10 a month): no daily or monthly caps, with fair use rules. A parent or guardian pays and approves.",
+        "Essential (free): 50 tutor messages a day and 10 uploads a month, with no limit on reviewing the cards, notes and quizzes you already have. Independent (free, plus provider fees): you bring your own API key from any OpenAI-compatible provider, so that provider sets the limits and bills the key holder. Unlimited ($10 a month): no daily or monthly caps, with fair use rules. A parent or guardian pays and approves.",
         "These are planned launch figures and may change once real costs are known. We announce changes before they apply. See the plans page for details.",
       ]],
     ],
