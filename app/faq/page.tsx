@@ -18,7 +18,7 @@ const GROUPS: Group[] = [
     items: [
       ["How does the site work?", [
         "You pick your classes, add your notes (a PDF, a Word file or a text file, up to 25 MB), and Stoga.study turns them into a study set: a study guide, flashcards and a practice quiz. Everything links back to the pages it came from, so you can always check the source.",
-        "Open the app at app.stoga.study and sign in with your email. Photos of handwritten notes and exam prep are coming in the next update.",
+        "Open the app at beta.stoga.study and sign in with your email. Photos of handwritten notes and exam prep are coming in the next update.",
       ]],
       ["How does the AI tutor help me study?", [
         "The tutor gives you a small hint first. If you need more, it names the formula or the page to look at. You only get the full explanation, with a worked example, when you ask for it.",

@@ -26,7 +26,7 @@ const PLANS: Plan[] = [
       ["Cards, notes, saved quizzes", "No limit"],
     ],
     points: ["Every feature: tutor, cards, quizzes, guides, planner", "Same answer quality as every plan", "Limits reset at midnight and on the 1st"],
-    cta: { label: "Get started", href: "https://app.stoga.study" },
+    cta: { label: "Get started", href: "https://beta.stoga.study" },
   },
   {
     name: "Independent",

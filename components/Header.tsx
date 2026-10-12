@@ -74,7 +74,7 @@ export function Header() {
           >
             <Icon name={THEME_ICON[choice]} />
           </button>
-          <a className="btn btn-primary btn-sm nav-cta" href="https://app.stoga.study">
+          <a className="btn btn-primary btn-sm nav-cta" href="https://beta.stoga.study">
             Open the app
           </a>
           <button
@@ -97,7 +97,7 @@ export function Header() {
               <Icon name="arrowRight" className="icon" />
             </a>
           ))}
-          <a className="btn btn-primary btn-block" href="https://app.stoga.study" onClick={() => setOpen(false)}>
+          <a className="btn btn-primary btn-block" href="https://beta.stoga.study" onClick={() => setOpen(false)}>
             Open the app
           </a>
         </div>

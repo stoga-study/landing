@@ -57,7 +57,7 @@ function Hero() {
               Turn raw notes into structured study guides, flashcards, or a personal AI tutor. Built to help you study smarter, not longer.
             </p>
             <div className="hero-ctas">
-              <a className="btn btn-inverse" href="https://app.stoga.study">
+              <a className="btn btn-inverse" href="https://beta.stoga.study">
                 Start studying free <Icon name="arrowRight" />
               </a>
               <a className="btn btn-ghost" href="/plans">See plans</a>
@@ -335,7 +335,7 @@ function FinalCta() {
         <h2 id="final-title">Your notes are already enough. We just help you use them.</h2>
         <p>Setting up takes about a minute. All you need is an email address.</p>
         <div className="hero-ctas">
-          <a className="btn btn-inverse" href="https://app.stoga.study">Start studying free <Icon name="arrowRight" /></a>
+          <a className="btn btn-inverse" href="https://beta.stoga.study">Start studying free <Icon name="arrowRight" /></a>
           <a className="btn btn-ghost" href="/faq">Read the FAQ</a>
         </div>
       </div>
