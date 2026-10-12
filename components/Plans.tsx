@@ -38,7 +38,7 @@ const PLANS: Plan[] = [
       ["Uploads", "Your provider's limits"],
       ["Paid to Stoga", "$0"],
     ],
-    points: ["Use your own Groq API key", "Set a monthly spending cap with your provider", "Remove the key any time"],
+    points: ["Use your own OpenAI API key", "Set a monthly spending cap with your provider", "Remove the key any time"],
     cta: { label: "Preview key settings", href: "#byok" },
   },
   {
@@ -59,7 +59,7 @@ const PLANS: Plan[] = [
 ];
 
 const PROVIDERS = {
-  groq: { name: "Groq", prefix: "gsk_", placeholder: "gsk_…" },
+  openai: { name: "OpenAI", prefix: "sk-", placeholder: "sk-…" },
 } as const;
 type Provider = keyof typeof PROVIDERS;
 
@@ -124,7 +124,7 @@ export function PlanExtras() {
 }
 
 function ByokCard() {
-  const [provider, setProvider] = useState<Provider>("groq");
+  const [provider, setProvider] = useState<Provider>("openai");
   const [key, setKey] = useState("");
   const [show, setShow] = useState(false);
   const [state, setState] = useState<KeyState>({ kind: "idle" });
