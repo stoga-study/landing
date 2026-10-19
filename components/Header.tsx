@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { DemoLabel } from "./DemoLabel";
 import { Icon } from "./Icon";
+import { APP_URL } from "./links";
 import { THEME_LABEL, type ThemeChoice, useTheme } from "./theme";
 
 const LINKS = [
-  { href: "/#how-it-works", label: "How it works" },
-  { href: "/#features", label: "Features" },
+  { href: "/#how-it-fits", label: "How it fits" },
+  { href: "/#tutor", label: "The tutor" },
   { href: "/plans", label: "Plans" },
   { href: "/privacy", label: "Privacy" },
   { href: "/faq", label: "FAQ" },
@@ -75,8 +75,8 @@ export function Header() {
           >
             <Icon name={THEME_ICON[choice]} />
           </button>
-          <a className="btn btn-primary btn-sm nav-cta" href="/#how-it-works">
-            <DemoLabel />
+          <a className="btn btn-primary btn-sm nav-cta" href={APP_URL}>
+            Get started
           </a>
           <button
             type="button"
@@ -98,8 +98,8 @@ export function Header() {
               <Icon name="arrowRight" className="icon" />
             </a>
           ))}
-          <a className="btn btn-primary btn-block" href="/#how-it-works" onClick={() => setOpen(false)}>
-            <DemoLabel />
+          <a className="btn btn-primary btn-block" href={APP_URL}>
+            Get started, it&apos;s free
           </a>
         </div>
       )}

@@ -57,6 +57,7 @@ export function Icon({ name, ...props }: { name: IconName } & SVGProps<SVGSVGEle
       aria-hidden="true"
       focusable="false"
       {...props}
+      className={props.className ? `icon ${props.className}` : "icon"}
     >
       {paths[name]}
     </svg>

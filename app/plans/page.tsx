@@ -18,25 +18,24 @@ export default function PlansPage() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Plans</span>
-            <h1 style={{ fontSize: "clamp(38px, 7vw, 56px)", marginTop: 14 }}>Free to start, simple to upgrade</h1>
+            <h1 className="page-title">Free for every Stoga student.</h1>
             <p>
               Every plan gets the same features and the same quality of answers. You can switch any time and keep everything you made.
-              Stoga.study is still in development, so nothing here is live yet.
             </p>
           </div>
           <Plans />
 
-          <div className="section-head" style={{ marginTop: 72 }}>
+          <div className="section-head" style={{ marginTop: 88 }}>
             <span className="eyebrow">For the technical side</span>
             <h2>API keys and fair use</h2>
             <p>Only needed if you pick the Independent plan or want the details on Unlimited.</p>
           </div>
           <PlanExtras />
 
-          <div className="section-head" id="funding" style={{ marginTop: 72 }}>
+          <div className="section-head" id="funding" style={{ marginTop: 88 }}>
             <span className="eyebrow">Funding, in the open</span>
             <h2>Kept going by the Stoga community</h2>
-            <p>Unlimited plans and optional donations will cover the costs, and we will show where every dollar goes.</p>
+            <p>Unlimited plans and optional donations cover the costs, and the app shows where every dollar goes.</p>
           </div>
           <Funding />
         </div>

@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Privacy",
-  description: "How Stoga.study plans to handle student notes, uploads and data, in a few short sections.",
+  description: "How Stoga.study handles your notes, uploads and data, in a few short sections.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -15,36 +15,41 @@ export default function PrivacyPage() {
       <main id="main" className="section">
         <div className="container prose">
           <span className="eyebrow">Privacy</span>
-          <h1>Your notes are yours</h1>
-          <div className="note-dashed" style={{ marginTop: 20 }}>
-            <span className="label-backend">Draft</span>
-            <p style={{ marginTop: 8 }}>
-              This is a short summary of how Stoga.study is being designed. It is not yet a legal policy and needs legal
-              review, including for FERPA, Pennsylvania privacy rules and parental consent, before the app launches.
-            </p>
-          </div>
-
-          <h2>What this website collects today</h2>
+          <h1>Your notes stay yours.</h1>
           <p>
-            This site is a static preview. It has no accounts, no forms that send data and no advertising trackers. The demo runs entirely in
-            your browser: files you pick are never uploaded, and API keys typed into the settings preview are never sent or saved.
-            Your colour theme choice is kept in your own browser.
+            A short summary of how Stoga.study handles your data. The app has the full version under Settings, then Privacy.
           </p>
 
-          <h2>How the app is designed to handle data</h2>
+          <h2>What stays private</h2>
           <ul>
-            <li>Uploads, notes, cards and mistakes are private by default. No other student sees them.</li>
-            <li>Your material is used to help you study. It is not sold, and there are no ads.</li>
-            <li>You can delete any upload, or your whole account and its content, at any time.</li>
-            <li>On the Independent plan, your API key is encrypted and used only for your own requests.</li>
-            <li>Paid plans need a parent or guardian to pay and approve.</li>
+            <li>Your files, study sets, flashcards, notes, calendar and tutor conversations are kept in your account, private to you, until you delete them.</li>
+            <li>Other students see nothing unless you share it. A share link or a study group shows only the study set you chose, with your first name.</li>
+            <li>To count your allowance and pay the AI bill, we record how much each feature was used, not what you wrote.</li>
+            <li>There are no ads, and your data is never sold.</li>
           </ul>
 
-          <h2>Questions</h2>
+          <h2>Where the AI runs</h2>
           <p>
-            Before launch, this page will list a contact for privacy questions and data requests.
+            The AI only sees something when you use a feature that needs it. Most features run on Mercury, a model from Inception. Reading photos and
+            scanned pages runs on OpenAI, and if Mercury is ever unavailable, your request goes to OpenAI instead. Inception&apos;s setting that lets it
+            train on what we send is turned off, and OpenAI&apos;s terms for apps say what&apos;s sent isn&apos;t used to train their models. If you use your
+            own key, your requests go to the AI service you chose, under its terms.
           </p>
-          <p style={{ marginTop: 32 }}><a href="/">Back to Stoga.study</a></p>
+
+          <h2>What you control</h2>
+          <ul>
+            <li>Delete any file, any tutor conversation or your chat with the coach.</li>
+            <li>Turn off sharing your study sets with classmates who upload the same file.</li>
+            <li>Download everything you made as a zip, any time.</li>
+            <li>Delete your account and everything in it.</li>
+          </ul>
+
+          <h2>This website</h2>
+          <p>
+            stoga.study has no accounts, no forms and no advertising trackers. Your colour theme choice is kept in your own browser.
+          </p>
+
+          <p style={{ marginTop: 40 }}><a href="/">Back to Stoga.study</a></p>
         </div>
       </main>
       <Footer />

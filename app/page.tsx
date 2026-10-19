@@ -1,10 +1,7 @@
-import { Demo } from "@/components/demo/Demo";
-import { DemoLabel } from "@/components/DemoLabel";
 import { Footer } from "@/components/Footer";
-import { RotatingSchool } from "@/components/RotatingSchool";
 import { Header } from "@/components/Header";
-import { HeroVideo } from "@/components/HeroVideo";
-import { Icon, type IconName } from "@/components/Icon";
+import { APP_URL } from "@/components/links";
+import { Shot } from "@/components/Shot";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -14,7 +11,7 @@ const jsonLd = {
   applicationCategory: "EducationalApplication",
   operatingSystem: "Web",
   description:
-    "A free AI study app in development for Conestoga High School students: turn messy notes into organized study guides, with personal AI tutoring, flashcards and quizzes.",
+    "The free study app made for Conestoga High School. It has every CHS core course, syncs with your Schoology calendar, plans your week around your tests and studies from your own class notes.",
   offers: [
     { "@type": "Offer", name: "Essential", price: "0", priceCurrency: "USD" },
     { "@type": "Offer", name: "Independent", price: "0", priceCurrency: "USD" },
@@ -29,8 +26,9 @@ export default function Page() {
       <Header />
       <main id="main">
         <Hero />
-        <HowItWorks />
-        <Features />
+        <Fits />
+        <Screens />
+        <NotAChatbot />
         <TutorSection />
         <PrivacySection />
         <PlansSection />
@@ -47,29 +45,34 @@ function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="container">
-        <div className="ink-panel hero-panel">
-          <span className="circle circle-big" aria-hidden="true" />
-          <span className="circle circle-hot" aria-hidden="true" />
-          <span className="circle circle-accent" aria-hidden="true" />
-          <div className="hero-copy">
-            <span className="sticker">Free for every CHS student</span>
-            <h1 id="hero-title">Study like you belong at <RotatingSchool /></h1>
-            <p className="hero-lede">
-              Turn raw notes into structured study guides, flashcards, or a personal AI tutor. Built to help you study smarter, not longer.
-            </p>
-            <div className="hero-ctas">
-              <a className="btn btn-inverse" href="#how-it-works">
-                <DemoLabel /> <Icon name="arrowRight" />
-              </a>
-              <a className="btn btn-ghost" href="/plans">See plans</a>
-            </div>
-            <ul className="hero-meta">
-              <li><Icon name="check" /> No credit card needed (you wouldn&apos;t want to spend money on studying, would you?)</li>
-              <li><Icon name="check" /> Still being built, so what you can try today is a demo</li>
-            </ul>
+        <div className="hero-copy">
+          <span className="eyebrow">Made at Conestoga, for Conestoga</span>
+          <h1 id="hero-title">The study app that already knows <em>Stoga</em>.</h1>
+          <p className="hero-lede">
+            Your CHS classes, your Schoology due dates, your test next Thursday and your teacher&apos;s own notes, all in one place.
+            Open it and today&apos;s plan is already waiting.
+          </p>
+          <div className="hero-ctas">
+            <a className="btn btn-primary btn-lg" href={APP_URL}>Get started, it&apos;s free</a>
+            <a className="btn btn-secondary btn-lg" href="#how-it-fits">See how it fits</a>
           </div>
-          <div className="hero-visual">
-            <HeroVideo />
+          <ul className="hero-meta">
+            <li>Free for every Conestoga student</li>
+            <li>No credit card</li>
+            <li>Set up in about a minute</li>
+          </ul>
+        </div>
+        <div className="hero-shot">
+          <div className="wide-only">
+            <div className="window">
+              <div className="window-bar" aria-hidden="true"><span /><span /><span /><span className="url">beta.stoga.study</span></div>
+              <Shot name="desk-home" w={1440} h={900} alt="The Stoga.study home screen: today's plan for an AP Statistics midterm in 3 days, a coach note and 38 flashcards due." priority />
+            </div>
+          </div>
+          <div className="narrow-only">
+            <div className="phone">
+              <Shot name="phone-home" w={780} h={1688} alt="The Stoga.study home screen on a phone: today's plan for an AP Statistics midterm in 3 days." priority />
+            </div>
           </div>
         </div>
       </div>
@@ -77,93 +80,94 @@ function Hero() {
   );
 }
 
-/* ---------------- How it works (interactive demo) ---------------- */
+/* ---------------- How it fits into Stoga ---------------- */
 
-const WORKFLOW: [IconName, string, string, string][] = [
-  ["users", "", "Get set up", "Pick your classes in under a minute. No card, no trial clock."],
-  ["upload", "t2", "Add your notes", "A PDF, Word file, slides, a photo of handwritten notes or pasted text, up to 25 MB."],
-  ["list", "t3", "Get a study set", "Notes, flashcards, a practice quiz and a study guide, all linked to your page numbers."],
-  ["chat", "t4", "Ask the tutor", "Get a small hint first. Ask for the full answer only when you want it."],
-  ["cards", "", "Review flashcards", "Edit any card, rate how it felt, and it comes back just before you would forget."],
-  ["check", "t2", "Practice quiz", "Feedback after every answer, with the source page. Misses go to your mistake review."],
-  ["chart", "t3", "Plan and track", "Days to your exam, an honest readiness estimate, weak spots and a plan for the week."],
+const FITS: [string, string][] = [
+  ["Your classes are already in.", "Every core course from the Conestoga Program of Studies is built in, updated each school year. Pick yours and you're set up. No typing in class names, no blank page."],
+  ["Schoology, synced.", "Paste your Schoology calendar link once. Tests, quizzes and homework land on your calendar, sorted into the right class, and stay in sync on their own. Google, Outlook and Apple calendars work too."],
+  ["Your teacher's material, not the internet.", "Add the slides, the PDF or a photo of the handout. Every flashcard, quiz question and tutor answer comes from what your class actually covered, with the page it came from."],
+  ["A plan for this week, not someday.", "It counts down to every test, tells you honestly whether you're Ready, Getting there or need work, and turns that into a short plan for today. Ask the coach to move things around."],
+  ["Study with your class.", "Start a group for your period, share study sets and fix them together. First names only, invite only, no chat."],
 ];
 
-function HowItWorks() {
+function Fits() {
   return (
-    <section className="section" id="how-it-works" aria-labelledby="hiw-title">
+    <section className="section rule" id="how-it-fits" aria-labelledby="fits-title">
       <div className="container">
         <div className="section-head">
-          <span className="eyebrow">How it works</span>
-          <h2 id="hiw-title">From upload to study set in one sitting</h2>
-          <p className="wide-only">
-            This is a demo with sample content. Add a file, watch it become a study set, then poke at the tutor, cards and a quiz.
-          </p>
-          <p className="narrow-only">
-            Seven short steps from a file to a full study set.
-          </p>
+          <span className="eyebrow">How it fits</span>
+          <h2 id="fits-title">It plugs into the school day you already have.</h2>
+          <p>Most study apps start from zero. Stoga starts with your schedule, your classes and your teacher&apos;s notes, so there&apos;s nothing to set up and nothing to keep in sync.</p>
         </div>
-        {/* The interactive preview needs room, so phones get a static walkthrough instead. */}
-        <div className="wide-only">
-          <Demo />
-        </div>
-        <ol className="narrow-only steps-static">
-          {WORKFLOW.map(([icon, cls, t, d], i) => (
-            <li key={t} className="card">
-              <span className={`tile ${cls}`}><Icon name={icon} /></span>
-              <div>
-                <div className="step-n">Step {i + 1}</div>
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </div>
+        <ol className="fits">
+          {FITS.map(([t, d], i) => (
+            <li key={t}>
+              <span className="n">{String(i + 1).padStart(2, "0")}</span>
+              <h3>{t}</h3>
+              <p>{d}</p>
             </li>
           ))}
         </ol>
-        <div className="narrow-only callout neutral" style={{ marginTop: 16 }}>
-          <Icon name="info" />
-          <span><b>Want to try it?</b> The interactive demo opens on a tablet or computer. Visit stoga.study on a bigger screen to tap through it.</span>
-        </div>
-        <p className="demo-note wide-only">
-          <span className="label-backend"><Icon name="plug" /> Preview</span>{" "}
-          Sample content throughout. Reading your files, building real study sets and live tutor answers are still in development.
-        </p>
       </div>
     </section>
   );
 }
 
-/* ---------------- Features ---------------- */
+/* ---------------- Real screens ---------------- */
 
-const FEATURES: [IconName, string, string, string, "demo" | "planned"][] = [
-  ["text", "", "Messy notes in, study guide out", "Drop in a PDF, slides or a photo of your notes. We sort them into short sections with links back to your pages.", "demo"],
-  ["chat", "t2", "A tutor that teaches", "It gives hints and points to the page in your notes, instead of just doing the work for you.", "demo"],
-  ["cards", "t3", "Flashcards and quizzes", "Cards come from your own notes, and you can edit any of them. Quizzes tell you what you missed and where to look.", "demo"],
-  ["calendar", "t4", "A study plan", "Add an exam date and get a day-by-day plan you can move around.", "demo"],
-  ["wifiOff", "", "Offline access", "The plan is for saved cards and notes to work offline. The AI tutor will still need a connection.", "planned"],
-  ["users", "t2", "Built for families", "Parents and guardians can look over the plans, what they cost and what each one includes.", "planned"],
-];
-
-function Features() {
+function Screens() {
+  const shots: [string, string, string, string][] = [
+    ["phone-home", "Today's plan", "What to do tonight, in minutes.", "Today's plan: review 30 cards and a practice quiz for the AP Statistics midterm."],
+    ["phone-calendar", "Your calendar", "Tests and homework from Schoology.", "The calendar: AP Statistics midterm in 3 days, marked Getting there, and homework due tomorrow."],
+    ["phone-exam", "Ready for the test?", "A plan for every day until then.", "The midterm page: 3 days to go, a practice test, and a plan for each day before it."],
+  ];
   return (
-    <section className="section" id="features" aria-labelledby="features-title" style={{ paddingTop: 0 }}>
+    <section className="section rule" aria-labelledby="screens-title">
       <div className="container">
         <div className="section-head">
-          <span className="eyebrow">What it does</span>
-          <h2 id="features-title">Built around how CHS students actually study</h2>
-          <p>
-            Items marked <span className="chip chip-solid status">In the demo</span> work in the sample above.
-            Items marked <span className="chip chip-neutral status">Planned</span> are not built yet.
-          </p>
+          <span className="eyebrow">The real app</span>
+          <h2 id="screens-title">Open it, and it already knows what&apos;s next.</h2>
         </div>
-        <div className="trust">
-          {FEATURES.map(([i, cls, t, d, status]) => (
-            <div key={t} className="card">
-              <span className={`tile ${cls}`}><Icon name={i} /></span>
-              <h3>{t}</h3>
-              <p>{d}</p>
-              <span className={`chip status ${status === "demo" ? "chip-solid" : "chip-neutral"}`}>
-                {status === "demo" ? "In the demo" : "Planned"}
-              </span>
+        <div className="screens">
+          {shots.map(([name, t, d, alt]) => (
+            <figure key={name}>
+              <div className="phone"><Shot name={name} w={780} h={1688} alt={alt} /></div>
+              <figcaption><b>{t}</b><span>{d}</span></figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Why not just a chatbot ---------------- */
+
+const COMPARE: [string, string][] = [
+  ["Knows your classes, tests and due dates before you ask.", "Starts from zero every time. You explain your class, again."],
+  ["Answers from your teacher's notes, and shows you the page.", "Answers from the internet, which may not match how your class teaches it."],
+  ["Gives a hint first and won't write graded work.", "Will write the whole essay, which doesn't help you on the test."],
+  ["Brings back what you got wrong, right before you'd forget it.", "You have to remember what to review, and when."],
+  ["Free for every Conestoga student, with no ads.", "Free tiers run out, and nothing is set up for Stoga."],
+];
+
+function NotAChatbot() {
+  return (
+    <section className="section rule" aria-labelledby="chatbot-title">
+      <div className="container">
+        <div className="section-head">
+          <span className="eyebrow">Why not just ask a chatbot?</span>
+          <h2 id="chatbot-title">A chatbot knows everything. Stoga knows your classes.</h2>
+        </div>
+        <div className="compare" role="table" aria-label="Stoga.study compared with a general chatbot">
+          <div className="compare-head eyebrow" role="row">
+            <div className="us-h" role="columnheader">Stoga.study</div>
+            <div role="columnheader">A general chatbot</div>
+          </div>
+          {COMPARE.map(([us, them]) => (
+            <div key={us} className="compare-row" role="row">
+              <div className="us" role="cell">{us}</div>
+              <div className="them" role="cell">{them}</div>
             </div>
           ))}
         </div>
@@ -176,62 +180,59 @@ function Features() {
 
 function TutorSection() {
   return (
-    <section className="section" id="tutor" aria-labelledby="tutor-title" style={{ paddingTop: 0 }}>
+    <section className="section rule" id="tutor" aria-labelledby="tutor-title">
       <div className="container">
         <div className="section-head">
           <span className="eyebrow">The tutor</span>
-          <h2 id="tutor-title">Hints first, answers when you want them.</h2>
-          <p>The tutor starts with a small hint, shows which page it came from, and only goes further when you ask.</p>
+          <h2 id="tutor-title">It helps you get there. It won&apos;t do it for you.</h2>
+          <p>The tutor knows which class you&apos;re in and works from your notes. It starts small and only goes further when you ask.</p>
         </div>
         <div className="ladder">
-          <div className="rung">
-            <div className="num">1</div>
-            <h3>Hint</h3>
-            <p>Points you in the right direction without giving the answer away.</p>
+          <div className="card rung">
+            <div className="num">01</div>
+            <h3>A hint</h3>
+            <p>Points you the right way without giving the answer away.</p>
           </div>
-          <div className="rung">
-            <div className="num">2</div>
-            <h3>Closer hint</h3>
-            <p>Names the formula or the page. You take the next step.</p>
+          <div className="card rung">
+            <div className="num">02</div>
+            <h3>A closer hint</h3>
+            <p>Names the idea or the page in your notes. You take the next step.</p>
           </div>
-          <div className="rung ink-panel">
-            <div className="num">3</div>
-            <h3>Full explanation</h3>
-            <p>Only when you ask, with a worked example and the source page.</p>
+          <div className="card rung last">
+            <div className="num">03</div>
+            <h3>The full explanation</h3>
+            <p>When you ask for it, with a worked example and the page it came from.</p>
           </div>
         </div>
+        <p className="integrity">
+          No essays for English, no code outside CS classes, no graded work. Your teachers&apos; rules always come first. <a href="/faq#integrity">How we handle academic integrity</a>
+        </p>
       </div>
     </section>
   );
 }
 
-/* ---------------- Privacy widget ---------------- */
+/* ---------------- Privacy ---------------- */
 
 function PrivacySection() {
-  const points: [IconName, string, string][] = [
-    ["lock", "Your notes stay yours", "Uploads, notes and mistakes are private by default. Other students never see them."],
-    ["shield", "No selling, no ads", "Your material is only used to help you study. You can delete it, or your whole account, any time."],
-    ["users", "Parents can look too", "Guardians can review plans and costs. Paid plans need a parent or guardian to approve."],
+  const points: [string, string][] = [
+    ["Private by default", "Your uploads, notes and mistakes are yours. Other students never see them unless you share a set."],
+    ["No ads, never sold", "Your material is only used to help you study. The AI providers we use don't train on it."],
+    ["Yours to take or delete", "Download everything you made, or delete it and your account, any time."],
   ];
   return (
-    <section className="section" id="privacy" aria-labelledby="privacy-title" style={{ paddingTop: 0 }}>
+    <section className="section rule" id="privacy" aria-labelledby="privacy-title">
       <div className="container">
-        <div className="card privacy-widget">
-          <div>
-            <span className="eyebrow">Privacy</span>
-            <h2 id="privacy-title">Your data, handled carefully</h2>
-            <p>This is how we are designing the app. The full policy is still in review.</p>
-            <a className="btn btn-secondary" href="/privacy">Read the privacy summary</a>
-          </div>
-          <ul>
-            {points.map(([i, t, d]) => (
-              <li key={t}>
-                <span className="tile soft"><Icon name={i} /></span>
-                <span><b>{t}</b><br /><span className="muted">{d}</span></span>
-              </li>
-            ))}
-          </ul>
+        <div className="section-head">
+          <span className="eyebrow">Privacy</span>
+          <h2 id="privacy-title">Your notes stay yours.</h2>
         </div>
+        <div className="points">
+          {points.map(([t, d]) => (
+            <div key={t}><h3>{t}</h3><p>{d}</p></div>
+          ))}
+        </div>
+        <p style={{ marginTop: 28 }}><a className="btn btn-secondary" href="/privacy">Read the privacy summary</a></p>
       </div>
     </section>
   );
@@ -241,16 +242,16 @@ function PrivacySection() {
 
 function PlansSection() {
   const plans = [
-    ["Essential", "Free", "Everything you need for a full course load. No credit card."],
-    ["Independent", "Free + provider fees", "Bring your own API key from any OpenAI-compatible provider. A parent or guardian usually sets it up."],
+    ["Essential", "Free", "50 tutor messages a day and 10 new study sets a month. Every feature. Enough for a full course load."],
+    ["Independent", "Free + provider fees", "Bring your own key from any OpenAI-compatible provider. A parent or guardian usually sets it up."],
     ["Unlimited", "$10 a month", "No daily caps, and it helps keep Essential free for everyone."],
   ];
   return (
-    <section className="section" id="plans" aria-labelledby="plans-title" style={{ paddingTop: 0 }}>
+    <section className="section rule" id="plans" aria-labelledby="plans-title">
       <div className="container">
         <div className="section-head">
           <span className="eyebrow">Plans</span>
-          <h2 id="plans-title">Free to start, simple to upgrade</h2>
+          <h2 id="plans-title">Free for every Stoga student.</h2>
           <p>Every plan gets the same features and the same quality of answers.</p>
         </div>
         <div className="plans-lite">
@@ -262,7 +263,7 @@ function PlansSection() {
             </div>
           ))}
         </div>
-        <p style={{ marginTop: 20 }}><a className="btn btn-secondary" href="/plans">Compare plans and limits</a></p>
+        <p style={{ marginTop: 24 }}><a className="btn btn-secondary" href="/plans">Compare plans and limits</a></p>
       </div>
     </section>
   );
@@ -273,15 +274,13 @@ function PlansSection() {
 function FinalCta() {
   return (
     <section className="container" aria-labelledby="final-title">
-      <div className="ink-panel final">
-        <span className="circle circle-big" aria-hidden="true" />
-        <span className="circle circle-hot" aria-hidden="true" />
-        <span className="sticker">Free for every CHS student</span>
-        <h2 id="final-title">Your notes are already enough. We just help you use them.</h2>
-        <p>The demo takes about two minutes, and there is nothing to sign up for.</p>
+      <div className="card final">
+        <span className="eyebrow">Free for every Conestoga student</span>
+        <h2 id="final-title">Your next test is already on the calendar.</h2>
+        <p>Sign in with your email, pick your classes and link Schoology. It takes about a minute.</p>
         <div className="hero-ctas">
-          <a className="btn btn-inverse" href="#how-it-works"><DemoLabel /> <Icon name="arrowRight" /></a>
-          <a className="btn btn-ghost" href="/faq">Read the FAQ</a>
+          <a className="btn btn-primary btn-lg" href={APP_URL}>Get started, it&apos;s free</a>
+          <a className="btn btn-ghost btn-lg" href="/faq">Read the FAQ</a>
         </div>
       </div>
     </section>
