@@ -5,9 +5,9 @@ import { APP_URL } from "./links";
 import { THEME_LABEL, type ThemeChoice, useTheme } from "./theme";
 
 const COLS = [
-  { h: "Product", links: [["Open the app", APP_URL], ["How it fits", "/#how-it-fits"], ["The tutor", "/#tutor"], ["Plans", "/plans"]] },
+  { h: "Product", links: [["Open the app", APP_URL], ["How it fits", "/#how-it-fits"], ["The tutor", "/#tutor"], ["Plans", "/plans"], ["What's new", `${APP_URL}/updates`]] },
   { h: "Community", links: [["Funding", "/plans#funding"], ["Your own API key", "/plans#byok"], ["Fair use", "/plans#fair-use"], ["FAQ", "/faq"]] },
-  { h: "Trust", links: [["Privacy", "/privacy"], ["Academic integrity", "/faq#integrity"], ["Offline", "/faq#offline"]] },
+  { h: "Trust", links: [["Privacy", "/privacy"], ["Academic integrity", "/faq#integrity"], ["Offline", "/faq#offline"], ["Known issues", `${APP_URL}/known-issues`]] },
 ];
 
 export function Footer() {
