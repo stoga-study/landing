@@ -8,5 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "https://stoga.study/privacy", changeFrequency: "monthly", priority: 0.4 },
     { url: "https://stoga.study/plans", changeFrequency: "monthly", priority: 0.6 },
     { url: "https://stoga.study/faq", changeFrequency: "monthly", priority: 0.6 },
+    { url: "https://stoga.study/video", changeFrequency: "monthly", priority: 0.5 },
   ];
 }

@@ -303,3 +303,35 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 .theme-seg button { border: 0; background: transparent; padding: 6px 12px; border-radius: 999px; font-size: 13px; color: var(--muted); }
 .theme-seg button[aria-pressed="true"] { background: var(--soft); color: var(--ink); font-weight: 600; }
 .footer-legal { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted); }
+
+/* Updates video (/video) */
+.uv { display: flex; flex-direction: column; gap: 24px; }
+.uv-controls { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; }
+.uv-group { display: flex; align-items: center; gap: 10px; }
+.uv-seg { display: inline-flex; padding: 3px; border: 1px solid var(--line-strong); border-radius: var(--r-control); background: var(--card); }
+.uv-seg button { border: 0; background: transparent; padding: 9px 14px; border-radius: 9px; font: 500 14px/1 var(--font-body); color: var(--ink-2); cursor: pointer; }
+.uv-seg button[aria-pressed="true"] { background: var(--primary); color: var(--on-fill); }
+.uv-stage { display: grid; gap: 28px; align-items: start; }
+.uv-film { position: relative; min-width: 0; }
+.uv-film video { display: block; width: 100%; max-width: 100%; border: 1px solid var(--line); border-radius: var(--r-panel); background: var(--soft); }
+.uv-landscape .uv-film video { aspect-ratio: 16 / 9; }
+.uv-vertical .uv-film { width: 100%; max-width: 400px; margin: 0 auto; }
+.uv-vertical .uv-film video { aspect-ratio: 9 / 16; }
+.uv-sound { position: absolute; left: 12px; top: 12px; }
+.uv-chapters { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); border-top: 1px solid var(--line); }
+.uv-chapters button { width: 100%; text-align: left; display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 4px 12px; align-items: baseline; padding: 14px 4px; background: none; border: 0; border-bottom: 1px solid var(--line); color: inherit; font: inherit; cursor: pointer; }
+.uv-chapters .v { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.uv-chapters .t { font-family: var(--font-display); font-weight: 500; font-size: 20px; line-height: 1.2; color: var(--ink); }
+.uv-chapters .at { font-family: var(--font-mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.uv-chapters .what { grid-column: 2 / 4; font-size: 14px; color: var(--muted); }
+.uv-chapters button:hover .t, .uv-chapters button.on .t, .uv-chapters button.on .v { color: var(--brand); }
+.uv-seg button:focus-visible, .uv-chapters button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.uv-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+.uv-cta p { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); color: var(--ink); }
+@media (min-width: 900px) {
+  .uv-landscape .uv-chapters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .uv-landscape .uv-chapters li:not(:nth-child(3n)) button { border-right: 1px solid var(--line); padding-right: 16px; }
+  .uv-landscape .uv-chapters li:not(:nth-child(3n+1)) button { padding-left: 16px; }
+  .uv-vertical .uv-stage { grid-template-columns: 400px minmax(0, 1fr); }
+  .uv-vertical .uv-film { margin: 0; }
+}
